@@ -11,7 +11,9 @@ import SwiftUI
 struct ChartsExamplesApp: App {
     var body: some Scene {
         WindowGroup {
-            ArcView(color: .red, startRadius: 90, endRadius: 100, startTrim: 0.25, endTrim: 0.75, rotation: 30)
+            ColorfulButtonView(colors: [.red, .cyan, .pink, .blue, .green, .mint, .orange], dim: 50, offset: 10) {
+                
+            }
         }
     }
 }

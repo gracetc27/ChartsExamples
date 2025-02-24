@@ -51,5 +51,5 @@ struct RandomArcFromColorsView: View {
 }
 
 #Preview {
-    RandomArcFromColorsView(colors: [.red, .blue, .green], index: 2, minRadius: 90, maxRadius: 120, opacity: 1)
+    RandomArcFromColorsView(colors: [.red, .blue, .green], index: 2, minRadius: 120, maxRadius: 180, opacity: 1)
 }
