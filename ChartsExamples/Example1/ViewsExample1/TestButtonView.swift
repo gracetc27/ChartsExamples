@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TestButtonView: View {
-    @State var colors: [Color]
     var count: CGFloat {
         CGFloat(colors.count)
     }
@@ -17,8 +16,13 @@ struct TestButtonView: View {
     }
     let threshold = 30.0
 
+    @State private var colors: [Color]
     @State private var rotateBar = false
     @State private var tilt: CGFloat = 0.0
+
+    init(colors: [Color]) {
+        self._colors = State(initialValue: colors)
+    }
 
     var body: some View {
         NavigationStack {
