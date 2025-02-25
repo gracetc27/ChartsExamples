@@ -11,9 +11,7 @@ import SwiftUI
 struct ChartsExamplesApp: App {
     var body: some Scene {
         WindowGroup {
-            ColorfulButtonView(colors: .constant([.red, .cyan, .pink, .blue, .green, .mint, .orange]), dim: 50, offset: 10) {
-
-            }
+            TestButtonView()
         }
     }
 }
