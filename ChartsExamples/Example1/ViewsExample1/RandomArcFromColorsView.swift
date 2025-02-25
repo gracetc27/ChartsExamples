@@ -18,14 +18,10 @@ struct RandomArcFromColorsView: View {
     let endTrim = 1.0
 
     var isValidIndex: Bool {
-        index >= colors.count && index >= 0
+        index < colors.count && index >= 0
     }
-    var theIndex: Int{
-        if isValidIndex {
-            return index
-        } else {
-            return 0
-        }
+    var theIndex: Int {
+        isValidIndex ? index : 0
     }
     var color: Color {
         colors[theIndex]
@@ -34,13 +30,14 @@ struct RandomArcFromColorsView: View {
         CGFloat(colors.count)
     }
     var endRadius: CGFloat {
-        (minRadius + maxRadius)/count
+        minRadius + maxRadius / count
     }
     var rotation: CGFloat {
         Double.random(in: 0...360)
     }
 
     var body: some View {
+
         ArcView(color: color.opacity(opacity),
                 startRadius: minRadius,
                 endRadius: endRadius,
@@ -51,5 +48,5 @@ struct RandomArcFromColorsView: View {
 }
 
 #Preview {
-    RandomArcFromColorsView(colors: [.red, .blue, .green], index: 2, minRadius: 120, maxRadius: 180, opacity: 1)
+    RandomArcFromColorsView(colors: [.red, .blue, .green], index: 2, minRadius: 170, maxRadius: 180, opacity: 0.9)
 }

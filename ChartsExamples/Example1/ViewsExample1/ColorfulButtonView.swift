@@ -36,7 +36,7 @@ struct ColorfulButtonView: View {
 
     var body: some View {
         ZStack {
-            ForEach(0..<colors.count, id: \.self) { i in
+            ForEach(0..<colors.count-1, id: \.self) { i in
                 RandomArcFromColorsView(
                     colors: colors,
                     index: i,
@@ -60,7 +60,7 @@ struct ColorfulButtonView: View {
 }
 
 #Preview {
-    ColorfulButtonView(colors: [.red, .blue, .green, .pink, .cyan, .orange], dim: 100, offset: 10) {
+    ColorfulButtonView(colors: [.red, .blue, .green, .pink, .cyan, .orange, .yellow, .black], dim: 100, offset: 10) {
 
     }
 }

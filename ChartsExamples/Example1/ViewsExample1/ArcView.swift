@@ -14,19 +14,24 @@ struct ArcView: View {
     let startTrim: CGFloat
     let endTrim: CGFloat
     let rotation: CGFloat
+
     @State private var finalTrim: CGFloat = 0
 
     var lineWidth: CGFloat {
         endRadius - startRadius
     }
+
     var finalRadius: CGFloat {
-        endRadius - lineWidth
+        endRadius-lineWidth
     }
 
     var body: some View {
         Circle()
             .trim(from: startTrim, to: finalTrim)
-            .stroke(color, style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
+            .stroke(color,
+                    style: StrokeStyle(
+                        lineWidth: lineWidth,
+                        lineCap: .round))
             .rotationEffect(.degrees(rotation))
             .frame(width: finalRadius, height: finalRadius)
             .onAppear {
