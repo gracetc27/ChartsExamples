@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ColorfulButtonView: View {
-    @State var colors: [Color]
+    @Binding var colors: [Color]
     let dim: CGFloat
     let offset: CGFloat
     let action: () -> Void
@@ -60,7 +60,7 @@ struct ColorfulButtonView: View {
 }
 
 #Preview {
-    ColorfulButtonView(colors: [.red, .blue, .green, .pink, .cyan, .orange, .yellow, .black], dim: 100, offset: 10) {
+    ColorfulButtonView(colors: .constant([.red, .blue, .green, .pink, .cyan, .orange, .yellow, .black]), dim: 100, offset: 10) {
 
     }
 }
