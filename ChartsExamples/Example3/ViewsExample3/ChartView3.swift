@@ -37,6 +37,7 @@ struct ChartView3: View {
                         case .bar:
                             BarMark(x: .value("Day", weekday.day),
                                     y: .value("Sales", weekday.sales))
+                            .foregroundStyle(by: .value("Day", weekday.day))
                         case .area:
                             AreaMark(x: .value("Day", weekday.day),
                                      y: .value("Sales", weekday.sales))
@@ -49,6 +50,7 @@ struct ChartView3: View {
                         case .bar:
                             BarMark(x: .value("Sales", weekday.sales),
                                     y: .value("Day", weekday.day))
+                            .foregroundStyle(by: .value("Day", weekday.day))
                         case .area:
                             AreaMark(x: .value("Sales", weekday.sales),
                                      y: .value("Day", weekday.day))
@@ -56,6 +58,7 @@ struct ChartView3: View {
                     }
                 }
             }
+            .chartForegroundStyleScale(range: barColors)
             HStack {
                 Button("", systemImage: "chart.bar.xaxis") {
                     withAnimation {
