@@ -21,3 +21,9 @@ let defaultDailySales: [DailySalesType] = [ .init(day: "Mon", sales: 120.3),
                                  .init(day: "Sat", sales: 149.8),
                                  .init(day: "Sun", sales: 116.1)
 ]
+
+enum ChartType: String, CaseIterable {
+    case line = "Line"
+    case bar = "Bar"
+    case area = "Area"
+}
